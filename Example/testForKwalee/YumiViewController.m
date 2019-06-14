@@ -22,7 +22,6 @@
 @property (nonatomic) UIButton *requestBannerBtn;
 @property (nonatomic) UIButton *requestInterstitialBtn;
 @property (nonatomic) UIButton *presentInterstitialBtn;
-@property (nonatomic) UIButton *requestRewardVideoBtn;
 @property (nonatomic) UIButton *presentRewardVideoBtn;
 
 // Yumi
@@ -53,6 +52,8 @@
     // init and load yumi interstitial (auto cache)
     self.yumiInterstitial = [[YumiMediationInterstitial alloc] initWithPlacementID:@"onkkeg5i" channelID:@"" versionID:@"" rootViewController:self];
     self.yumiInterstitial.delegate = self;
+    // init yumi video
+    [[YumiMediationVideo sharedInstance] loadAdWithPlacementID:@"5xmpgti4" channelID:@"" versionID:@""];
     
     // iron
     [IronSource setRewardedVideoDelegate:self];
@@ -91,12 +92,21 @@
     }
 }
 
-- (void)requestRewardVideo {
-    
-}
-
 - (void)presentRewardVideo {
-    
+    if ([[YumiMediationVideo sharedInstance] isReady]) {
+        [self addLog:@"yumi video is ready"];
+        [[YumiMediationVideo sharedInstance] presentFromRootViewController:self];
+        return;
+    } else {
+        [self addLog:@"yumi video not ready"];
+    }
+        
+    if ([IronSource hasRewardedVideo]) {
+        [IronSource showRewardedVideoWithViewController:self];
+        [self addLog:@"iron video is ready"];
+    } else {
+        [self addLog:@"iron video not ready"];
+    }
 }
 #pragma mark - YumiBannerDelegate
 - (void)yumiMediationBannerViewDidLoad:(YumiMediationBannerView *)adView {
@@ -161,30 +171,37 @@
 - (void)bannerWillPresentScreen {}
 - (void)bannerDidDismissScreen {}
 - (void)bannerWillLeaveApplication {}
+#pragma mark - Yumi video delegate
+- (void)yumiMediationVideoDidOpen:(YumiMediationVideo *)video {
+    [self addLog:@"yumi video did open"];
+}
+- (void)yumiMediationVideoDidStartPlaying:(YumiMediationVideo *)video {
+}
+- (void)yumiMediationVideoDidClose:(YumiMediationVideo *)video {
+    [self addLog:@"yumi video did close"];
+}
+- (void)yumiMediationVideoDidReward:(YumiMediationVideo *)video {
+    [self addLog:@"yumi video did reward"];
+}
 #pragma mark - ISRewardedVideoDelegate
 - (void)rewardedVideoHasChangedAvailability:(BOOL)available {
-    
 }
 - (void)didReceiveRewardForPlacement:(ISPlacementInfo *)placementInfo {
-    
+    [self addLog:@"iron video did reward"];
 }
 - (void)rewardedVideoDidFailToShowWithError:(NSError *)error {
-    
 }
 - (void)rewardedVideoDidOpen {
-    
+    [self addLog:@"iron video did open"];
 }
 - (void)rewardedVideoDidClose {
-    
+    [self addLog:@"iron video did close"];
 }
 - (void)rewardedVideoDidStart {
-    
 }
 - (void)rewardedVideoDidEnd {
-    
 }
 - (void)didClickRewardedVideo:(ISPlacementInfo *)placementInfo {
-    
 }
 #pragma mark - Yumi Interstitial Delegate
 - (void)yumiMediationInterstitialDidReceiveAd:(YumiMediationInterstitial *)interstitial {
@@ -236,9 +253,9 @@
 - (void)setUpUI {
     YumiMobileTools *tool = [YumiMobileTools sharedTool];
     CGFloat buttonWidth = [tool adaptedValue6:200];
-    CGFloat buttonHeight = [tool adaptedValue6:50];
-    CGFloat margin = [tool adaptedValue6:10];
-    CGFloat topMargin = [tool adaptedValue6:10];
+    CGFloat buttonHeight = [tool adaptedValue6:35];
+    CGFloat margin = [tool adaptedValue6:5];
+    CGFloat topMargin = [tool adaptedValue6:5];
     if ([tool isiPhoneX]) {
         topMargin += kIPHONEXSTATUSBAR;
     }
@@ -269,7 +286,16 @@
     self.presentInterstitialBtn.layer.masksToBounds = YES;
     [self.presentInterstitialBtn setTitle:@"Present Interstitial" forState:UIControlStateNormal];
     [self.view addSubview:self.presentInterstitialBtn];
-    self.console = [[UITextView alloc] initWithFrame:CGRectMake(0, topMargin + buttonHeight * 3 + margin * 3, screenWidth, screenHeight*0.7 - 100)];
+    // present reward video
+    self.presentRewardVideoBtn = [[UIButton alloc] initWithFrame:CGRectMake((screenWidth - buttonWidth)/2, topMargin + buttonHeight * 3 + margin * 3, buttonWidth, buttonHeight)];
+    [self.presentRewardVideoBtn addTarget:self action:@selector(presentRewardVideo) forControlEvents:UIControlEventTouchUpInside];
+    self.presentRewardVideoBtn.backgroundColor = [UIColor blackColor];
+    self.presentRewardVideoBtn.layer.cornerRadius = 10;
+    self.presentRewardVideoBtn.layer.masksToBounds = YES;
+    [self.presentRewardVideoBtn setTitle:@"Present RewardVideo" forState:UIControlStateNormal];
+    [self.view addSubview:self.presentRewardVideoBtn];
+    // console
+    self.console = [[UITextView alloc] initWithFrame:CGRectMake(0, topMargin + buttonHeight * 4 + margin * 4, screenWidth, screenHeight*0.7 - 100)];
     self.console.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.console];
 }
