@@ -7,8 +7,31 @@
 //
 
 #import "YumiViewController.h"
+#import <IronSource/IronSource.h>
+#import <YumiMediationSDK/YumiMediationVideo.h>
+#import "YumiMobileTools.h"
+#import <YumiMediationSDK/YumiMediationBannerView.h>
+#import <YumiMediationSDK/YumiMediationInterstitial.h>
+#import <YumiMediationSDK/YumiMediationVideo.h>
 
-@interface YumiViewController ()
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+#define bannerInterval 30
+@interface YumiViewController ()<ISRewardedVideoDelegate,ISInterstitialDelegate,ISBannerDelegate,YumiMediationVideoDelegate,YumiMediationBannerViewDelegate,YumiMediationInterstitialDelegate>
+@property (nonatomic) UITextView *console;
+@property (nonatomic) UIButton *requestBannerBtn;
+@property (nonatomic) UIButton *requestInterstitialBtn;
+@property (nonatomic) UIButton *presentInterstitialBtn;
+@property (nonatomic) UIButton *requestRewardVideoBtn;
+@property (nonatomic) UIButton *presentRewardVideoBtn;
+
+// Yumi
+@property (nonatomic) YumiMediationBannerView *yumiBanner;
+@property (nonatomic) YumiMediationBannerView *yumiBannerView;
+@property (nonatomic) YumiMediationInterstitial *yumiInterstitial;
+@property (nonatomic) YumiMediationVideo *yumiVideo;
+// IS
+@property (nonatomic) ISBannerView *ironBanner;
 
 @end
 
@@ -18,6 +41,181 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self setUpUI];
+    [self initSDK];
+}
+
+- (void)initSDK {
+    // yumi
+    self.yumiBanner = [[YumiMediationBannerView alloc] initWithPlacementID:@"l6ibkpae" channelID:@"" versionID:@"" position:YumiMediationBannerPositionBottom rootViewController:self];
+    self.yumiBanner.delegate = self;
+    self.yumiBanner.isIntegrated = YES;
+    [self.yumiBanner disableAutoRefresh];
+    
+    // iron
+    [IronSource setRewardedVideoDelegate:self];
+    [IronSource setInterstitialDelegate:self];
+    [IronSource setBannerDelegate:self];
+    [IronSource initWithAppKey:@"96054175" adUnits:@[IS_REWARDED_VIDEO,IS_INTERSTITIAL,IS_OFFERWALL, IS_BANNER]];
+    [ISIntegrationHelper validateIntegration];
+}
+
+- (void)requestBannerAd {
+    [self.yumiBanner loadAd:YES];
+    [self addLog:@"request yumi banner"];
+    // iron banner disable auto refresh in dashboard
+}
+
+- (void)updateBanner:(NSTimeInterval)interval {
+    if (!interval) {
+        [self requestBannerAd];
+    }
+    interval = MAX(bannerInterval, interval);
+    __weak __typeof(self)weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf requestBannerAd];
+    });
+}
+
+- (void)requestInterstitialAd {
+    
+}
+
+- (void)presentInterstitialAd {
+    
+}
+
+- (void)requestRewardVideo {
+    
+}
+
+- (void)presentRewardVideo {
+    
+}
+#pragma mark - YumiBannerDelegate
+- (void)yumiMediationBannerViewDidLoad:(YumiMediationBannerView *)adView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([self.view.subviews containsObject:self.ironBanner]) {
+            [self.ironBanner removeFromSuperview];
+        }
+        if ([self.view.subviews containsObject:self.yumiBannerView]) {
+            [self.yumiBannerView removeFromSuperview];
+        }
+        self.yumiBannerView = adView;
+        CGFloat y = self.view.frame.size.height - (self.yumiBannerView.frame.size.height / 2);
+        if (@available(ios 11.0, *)) {
+            y -= self.view.safeAreaInsets.bottom;
+        }
+        self.yumiBannerView.center = CGPointMake(self.view.frame.size.width / 2, y);
+        [self.view addSubview:self.yumiBannerView];
+    });
+    [self updateBanner:bannerInterval];
+    [self addLog:@"yumi banner is received"];
+}
+- (void)yumiMediationBannerView:(YumiMediationBannerView *)adView didFailWithError:(YumiMediationError *)error {
+    // load iron banner
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orientationChanged:)
+                                                 name:@"UIDeviceOrientationDidChangeNotification"
+                                               object:nil];
+    [IronSource loadBannerWithViewController:self size:ISBannerSize_BANNER];
+    [self addLog:@"yumi banner fail to load"];
+    [self addLog:@"request iron banner"];
+}
+- (void)yumiMediationBannerViewDidClick:(YumiMediationBannerView *)adView {
+    [self addLog:@"yumi banner is clicked"];
+}
+#pragma mark - ISBannerDelegate
+- (void)bannerDidLoad:(ISBannerView *)bannerView {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([self.view.subviews containsObject:self.ironBanner]) {
+            [self.ironBanner removeFromSuperview];
+        }
+        if ([self.view.subviews containsObject:self.yumiBannerView]) {
+            [self.yumiBannerView removeFromSuperview];
+        }
+        self.ironBanner = bannerView;
+        CGFloat y = self.view.frame.size.height - (self.ironBanner.frame.size.height / 2);
+        if (@available(ios 11.0, *)) {
+            y -= self.view.safeAreaInsets.bottom;
+        }
+        self.ironBanner.center = CGPointMake(self.view.frame.size.width / 2, y);
+        [self.view addSubview:self.ironBanner];
+    });
+    [self updateBanner:bannerInterval];
+    [self addLog:@"iron banner is received"];
+}
+- (void)bannerDidFailToLoadWithError:(NSError *)error {
+    [self addLog:@"iron banner fail to load"];
+    [self updateBanner:0];
+}
+- (void)didClickBanner {
+    [self addLog:@"iron banner is clicked"];
+}
+- (void)bannerWillPresentScreen {}
+- (void)bannerDidDismissScreen {}
+- (void)bannerWillLeaveApplication {}
+#pragma mark - ISRewardedVideoDelegate
+- (void)rewardedVideoHasChangedAvailability:(BOOL)available {
+    
+}
+- (void)didReceiveRewardForPlacement:(ISPlacementInfo *)placementInfo {
+    
+}
+- (void)rewardedVideoDidFailToShowWithError:(NSError *)error {
+    
+}
+- (void)rewardedVideoDidOpen {
+    
+}
+- (void)rewardedVideoDidClose {
+    
+}
+- (void)rewardedVideoDidStart {
+    
+}
+- (void)rewardedVideoDidEnd {
+    
+}
+- (void)didClickRewardedVideo:(ISPlacementInfo *)placementInfo {
+    
+}
+#pragma mark - ISInterstitialDelegate
+- (void)interstitialDidLoad {
+    
+}
+- (void)interstitialDidFailToLoadWithError:(NSError *)error {
+    
+}
+- (void)interstitialDidOpen {
+    
+}
+- (void)interstitialDidClose {
+    
+}
+- (void)interstitialDidShow {
+    
+}
+- (void)interstitialDidFailToShowWithError:(NSError *)error {
+    
+}
+- (void)didClickInterstitial {
+    
+}
+
+#pragma mark - Orientation delegate
+- (void)orientationChanged:(NSNotification *)notification {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.ironBanner) {
+            CGFloat y = self.view.frame.size.height - (self.ironBanner.frame.size.height / 2);
+            if (@available(ios 11.0, *)) {
+                y -= self.view.safeAreaInsets.bottom;
+            }
+            self.ironBanner.center = CGPointMake(self.view.frame.size.width / 2, y);
+        }
+    });
+}
+
 - (void)setUpUI {
     YumiMobileTools *tool = [YumiMobileTools sharedTool];
     CGFloat buttonWidth = [tool adaptedValue6:200];
@@ -58,6 +256,7 @@
     self.console.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.console];
 }
+
 - (void)addLog:(NSString *)newLog {
     NSDate *date = [NSDate date];
     NSDateFormatter *formateDate = [[NSDateFormatter alloc] init];
@@ -76,6 +275,9 @@
         weakSelf.console.text = text;
     });
 }
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
