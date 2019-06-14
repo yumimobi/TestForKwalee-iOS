@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		019BBB293EAAE8200B3C3543 /* Pods_testForKwalee_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4578B97A507898C8818E648 /* Pods_testForKwalee_Tests.framework */; };
 		0B0FA5ECF866F0084AF17BC6 /* Pods_testForKwalee_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F0BBB85FBF1D7C10CABDEE /* Pods_testForKwalee_Example.framework */; };
+		5BD4872F22B2064300056956 /* YumiMediationAdMob.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5BD4871D22B2064300056956 /* YumiMediationAdMob.bundle */; };
+		5BD4873022B2064300056956 /* YumiMediationAdMob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4871E22B2064300056956 /* YumiMediationAdMob.framework */; };
+		5BD4873122B2064300056956 /* YumiMediationAppLovin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872022B2064300056956 /* YumiMediationAppLovin.framework */; };
+		5BD4873222B2064300056956 /* YumiMediationAdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872222B2064300056956 /* YumiMediationAdColony.framework */; };
+		5BD4873322B2064300056956 /* YumiMediationVungle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872422B2064300056956 /* YumiMediationVungle.framework */; };
+		5BD4873422B2064300056956 /* YumiMediationInMobi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872622B2064300056956 /* YumiMediationInMobi.framework */; };
+		5BD4873522B2064300056956 /* YumiMediationUnity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872822B2064300056956 /* YumiMediationUnity.framework */; };
+		5BD4873622B2064300056956 /* YumiMediationChartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872A22B2064300056956 /* YumiMediationChartboost.framework */; };
+		5BD4873722B2064300056956 /* YumiMediationIronSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872C22B2064300056956 /* YumiMediationIronSource.framework */; };
+		5BD4873822B2064300056956 /* YumiMediationBytedanceAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD4872E22B2064300056956 /* YumiMediationBytedanceAds.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,10 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E08B73671D274F5C56CC34D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2E08B73671D274F5C56CC34D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3CA56EB86DF4E986E8EC14D6 /* Pods-testForKwalee_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testForKwalee_Example.release.xcconfig"; path = "Target Support Files/Pods-testForKwalee_Example/Pods-testForKwalee_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3CAF230FDAD88E8784E71920 /* Pods-testForKwalee_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testForKwalee_Example.debug.xcconfig"; path = "Target Support Files/Pods-testForKwalee_Example/Pods-testForKwalee_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5523482239D5F993C0B8EBF8 /* testForKwalee.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = testForKwalee.podspec; path = ../testForKwalee.podspec; sourceTree = "<group>"; };
+		5523482239D5F993C0B8EBF8 /* testForKwalee.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = testForKwalee.podspec; path = ../testForKwalee.podspec; sourceTree = "<group>"; };
+		5BD4871D22B2064300056956 /* YumiMediationAdMob.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YumiMediationAdMob.bundle; sourceTree = "<group>"; };
+		5BD4871E22B2064300056956 /* YumiMediationAdMob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationAdMob.framework; sourceTree = "<group>"; };
+		5BD4872022B2064300056956 /* YumiMediationAppLovin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationAppLovin.framework; sourceTree = "<group>"; };
+		5BD4872222B2064300056956 /* YumiMediationAdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationAdColony.framework; sourceTree = "<group>"; };
+		5BD4872422B2064300056956 /* YumiMediationVungle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationVungle.framework; sourceTree = "<group>"; };
+		5BD4872622B2064300056956 /* YumiMediationInMobi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationInMobi.framework; sourceTree = "<group>"; };
+		5BD4872822B2064300056956 /* YumiMediationUnity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationUnity.framework; sourceTree = "<group>"; };
+		5BD4872A22B2064300056956 /* YumiMediationChartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationChartboost.framework; sourceTree = "<group>"; };
+		5BD4872C22B2064300056956 /* YumiMediationIronSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationIronSource.framework; sourceTree = "<group>"; };
+		5BD4872E22B2064300056956 /* YumiMediationBytedanceAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YumiMediationBytedanceAds.framework; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* testForKwalee_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testForKwalee_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,7 +80,7 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6EFE316CC830C3F0165A89BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		6EFE316CC830C3F0165A89BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C966F78A9A892AB980EC853 /* Pods-testForKwalee_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testForKwalee_Tests.release.xcconfig"; path = "Target Support Files/Pods-testForKwalee_Tests/Pods-testForKwalee_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,9 +94,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD4873722B2064300056956 /* YumiMediationIronSource.framework in Frameworks */,
+				5BD4873422B2064300056956 /* YumiMediationInMobi.framework in Frameworks */,
+				5BD4873322B2064300056956 /* YumiMediationVungle.framework in Frameworks */,
+				5BD4873122B2064300056956 /* YumiMediationAppLovin.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
+				5BD4873222B2064300056956 /* YumiMediationAdColony.framework in Frameworks */,
+				5BD4873622B2064300056956 /* YumiMediationChartboost.framework in Frameworks */,
+				5BD4873822B2064300056956 /* YumiMediationBytedanceAds.framework in Frameworks */,
+				5BD4873522B2064300056956 /* YumiMediationUnity.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				5BD4873022B2064300056956 /* YumiMediationAdMob.framework in Frameworks */,
 				0B0FA5ECF866F0084AF17BC6 /* Pods_testForKwalee_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,8 +132,104 @@
 				E92D75ACB093CDD6E6C1892A /* Pods-testForKwalee_Tests.debug.xcconfig */,
 				9C966F78A9A892AB980EC853 /* Pods-testForKwalee_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5BD4871A22B2064300056956 /* YumiExtraAdapters */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4871B22B2064300056956 /* YumiMediationAdMob */,
+				5BD4871F22B2064300056956 /* YumiMediationAppLovin */,
+				5BD4872122B2064300056956 /* YumiMediationAdColony */,
+				5BD4872322B2064300056956 /* YumiMediationVungle */,
+				5BD4872522B2064300056956 /* YumiMediationInMobi */,
+				5BD4872722B2064300056956 /* YumiMediationUnity */,
+				5BD4872922B2064300056956 /* YumiMediationChartboost */,
+				5BD4872B22B2064300056956 /* YumiMediationIronSource */,
+				5BD4872D22B2064300056956 /* YumiMediationBytedanceAds */,
+			);
+			path = YumiExtraAdapters;
+			sourceTree = "<group>";
+		};
+		5BD4871B22B2064300056956 /* YumiMediationAdMob */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4871C22B2064300056956 /* Resources */,
+				5BD4871E22B2064300056956 /* YumiMediationAdMob.framework */,
+			);
+			path = YumiMediationAdMob;
+			sourceTree = "<group>";
+		};
+		5BD4871C22B2064300056956 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4871D22B2064300056956 /* YumiMediationAdMob.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5BD4871F22B2064300056956 /* YumiMediationAppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872022B2064300056956 /* YumiMediationAppLovin.framework */,
+			);
+			path = YumiMediationAppLovin;
+			sourceTree = "<group>";
+		};
+		5BD4872122B2064300056956 /* YumiMediationAdColony */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872222B2064300056956 /* YumiMediationAdColony.framework */,
+			);
+			path = YumiMediationAdColony;
+			sourceTree = "<group>";
+		};
+		5BD4872322B2064300056956 /* YumiMediationVungle */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872422B2064300056956 /* YumiMediationVungle.framework */,
+			);
+			path = YumiMediationVungle;
+			sourceTree = "<group>";
+		};
+		5BD4872522B2064300056956 /* YumiMediationInMobi */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872622B2064300056956 /* YumiMediationInMobi.framework */,
+			);
+			path = YumiMediationInMobi;
+			sourceTree = "<group>";
+		};
+		5BD4872722B2064300056956 /* YumiMediationUnity */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872822B2064300056956 /* YumiMediationUnity.framework */,
+			);
+			path = YumiMediationUnity;
+			sourceTree = "<group>";
+		};
+		5BD4872922B2064300056956 /* YumiMediationChartboost */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872A22B2064300056956 /* YumiMediationChartboost.framework */,
+			);
+			path = YumiMediationChartboost;
+			sourceTree = "<group>";
+		};
+		5BD4872B22B2064300056956 /* YumiMediationIronSource */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872C22B2064300056956 /* YumiMediationIronSource.framework */,
+			);
+			path = YumiMediationIronSource;
+			sourceTree = "<group>";
+		};
+		5BD4872D22B2064300056956 /* YumiMediationBytedanceAds */ = {
+			isa = PBXGroup;
+			children = (
+				5BD4872E22B2064300056956 /* YumiMediationBytedanceAds.framework */,
+			);
+			path = YumiMediationBytedanceAds;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -144,6 +269,7 @@
 		6003F593195388D20070C39A /* Example for testForKwalee */ = {
 			isa = PBXGroup;
 			children = (
+				5BD4871A22B2064300056956 /* YumiExtraAdapters */,
 				6003F59C195388D20070C39A /* YumiAppDelegate.h */,
 				6003F59D195388D20070C39A /* YumiAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -209,6 +335,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				97CD271CBCDE0B10160773AB /* [CP] Embed Pods Frameworks */,
+				CF766584F7F0A54080F6E1E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +385,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -280,6 +408,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				5BD4872F22B2064300056956 /* YumiMediationAdMob.bundle in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +484,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF766584F7F0A54080F6E1E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testForKwalee_Example/Pods-testForKwalee_Example-resources.sh",
+				"${PODS_ROOT}/IronSourceTapjoyAdapter/ISTapjoyAdapter/Resources/TapjoyResources.bundle",
+				"${PODS_ROOT}/IronSourceTikTokAdapter/ISTikTokAdapter/Resources/BUAdSDK.bundle",
+				"${PODS_ROOT}/YumiBaidu/lib/baidumobadsdk.bundle",
+				"${PODS_ROOT}/YumiDomob/IndependentVideoBundle.bundle",
+				"${PODS_ROOT}/YumiMediationAdapters/YumiMediationGDT/Resources/YumiMediationGDT.bundle",
+				"${PODS_ROOT}/YumiMediationDebugCenter-iOS/Resources/YumiMediationDebugCenter.bundle",
+				"${PODS_ROOT}/YumiMediationSDK/Resources/YumiMediationSDK.bundle",
+				"${PODS_ROOT}/YumiMediationSDK/Resources/YumiAdsSDK.bundle",
+				"${PODS_ROOT}/YumiMediationSDK/Resources/ZplayMuteListener.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TapjoyResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BUAdSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/baidumobadsdk.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IndependentVideoBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YumiMediationGDT.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YumiMediationDebugCenter.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YumiMediationSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YumiAdsSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZplayMuteListener.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testForKwalee_Example/Pods-testForKwalee_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -494,6 +657,27 @@
 			baseConfigurationReference = 3CAF230FDAD88E8784E71920 /* Pods-testForKwalee_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationAdColony",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationAppLovin",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationVungle",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationUnity",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationBytedanceAds",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationAdMob",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationIronSource",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationChartboost",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationInMobi",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationAdMob",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationAppLovin",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationAdColony",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationVungle",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationInMobi",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationUnity",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationChartboost",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationIronSource",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationBytedanceAds",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testForKwalee/testForKwalee-Prefix.pch";
 				INFOPLIST_FILE = "testForKwalee/testForKwalee-Info.plist";
@@ -509,6 +693,27 @@
 			baseConfigurationReference = 3CA56EB86DF4E986E8EC14D6 /* Pods-testForKwalee_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationAdColony",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationAppLovin",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationVungle",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationUnity",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationBytedanceAds",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationAdMob",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationIronSource",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationChartboost",
+					"$(PROJECT_DIR)/testForKwalee/YumiMediationInMobi",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationAdMob",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationAppLovin",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationAdColony",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationVungle",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationInMobi",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationUnity",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationChartboost",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationIronSource",
+					"$(PROJECT_DIR)/testForKwalee/YumiExtraAdapters/YumiMediationBytedanceAds",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testForKwalee/testForKwalee-Prefix.pch";
 				INFOPLIST_FILE = "testForKwalee/testForKwalee-Info.plist";
