@@ -58,6 +58,24 @@
     self.console.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.console];
 }
+- (void)addLog:(NSString *)newLog {
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formateDate = [[NSDateFormatter alloc] init];
+    [formateDate setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dataString = [formateDate stringFromDate:date];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.console.layoutManager.allowsNonContiguousLayout = NO;
+        NSString *oldLog = weakSelf.console.text;
+        NSString *text = [NSString stringWithFormat:@"%@\n%@: %@", oldLog, dataString, newLog];
+        if (oldLog.length == 0) {
+            text = [NSString stringWithFormat:@"%@: %@", dataString, newLog];
+        }
+        [weakSelf.console scrollRangeToVisible:NSMakeRange(text.length, 1)];
+        weakSelf.console.text = text;
+    });
+}
 }
 
 - (void)didReceiveMemoryWarning
