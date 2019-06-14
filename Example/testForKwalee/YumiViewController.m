@@ -29,7 +29,6 @@
 @property (nonatomic) YumiMediationBannerView *yumiBanner;
 @property (nonatomic) YumiMediationBannerView *yumiBannerView;
 @property (nonatomic) YumiMediationInterstitial *yumiInterstitial;
-@property (nonatomic) YumiMediationVideo *yumiVideo;
 // IS
 @property (nonatomic) ISBannerView *ironBanner;
 
@@ -46,17 +45,20 @@
 }
 
 - (void)initSDK {
-    // yumi
+    // init yumi banner
     self.yumiBanner = [[YumiMediationBannerView alloc] initWithPlacementID:@"l6ibkpae" channelID:@"" versionID:@"" position:YumiMediationBannerPositionBottom rootViewController:self];
     self.yumiBanner.delegate = self;
     self.yumiBanner.isIntegrated = YES;
     [self.yumiBanner disableAutoRefresh];
+    // init and load yumi interstitial (auto cache)
+    self.yumiInterstitial = [[YumiMediationInterstitial alloc] initWithPlacementID:@"onkkeg5i" channelID:@"" versionID:@"" rootViewController:self];
+    self.yumiInterstitial.delegate = self;
     
     // iron
     [IronSource setRewardedVideoDelegate:self];
     [IronSource setInterstitialDelegate:self];
     [IronSource setBannerDelegate:self];
-    [IronSource initWithAppKey:@"96054175" adUnits:@[IS_REWARDED_VIDEO,IS_INTERSTITIAL,IS_OFFERWALL, IS_BANNER]];
+    [IronSource initWithAppKey:@"96054175" adUnits:@[IS_REWARDED_VIDEO,IS_INTERSTITIAL,IS_OFFERWALL,IS_BANNER]];
     [ISIntegrationHelper validateIntegration];
 }
 
@@ -78,11 +80,15 @@
 }
 
 - (void)requestInterstitialAd {
-    
+    [IronSource loadInterstitial];
 }
 
 - (void)presentInterstitialAd {
-    
+    if ([self.yumiInterstitial isReady]) {
+        [self.yumiInterstitial present];
+    } else if ([IronSource hasInterstitial]) {
+        [IronSource showInterstitialWithViewController:self];
+    }
 }
 
 - (void)requestRewardVideo {
@@ -180,27 +186,38 @@
 - (void)didClickRewardedVideo:(ISPlacementInfo *)placementInfo {
     
 }
+#pragma mark - Yumi Interstitial Delegate
+- (void)yumiMediationInterstitialDidReceiveAd:(YumiMediationInterstitial *)interstitial {
+    [self addLog:@"yumi interstitial is received"];
+}
+- (void)yumiMediationInterstitial:(YumiMediationInterstitial *)interstitial
+                 didFailWithError:(YumiMediationError *)error {
+    [self addLog:@"yumi interstitial fail to load"];
+}
+- (void)yumiMediationInterstitialWillDismissScreen:(YumiMediationInterstitial *)interstitial {
+    [self addLog:@"yumi interstitial is dismissed"];
+}
+- (void)yumiMediationInterstitialDidClick:(YumiMediationInterstitial *)interstitial {
+    [self addLog:@"yumi interstitial is clicked"];
+}
 #pragma mark - ISInterstitialDelegate
 - (void)interstitialDidLoad {
-    
+    [self addLog:@"iron interstitial is received"];
 }
 - (void)interstitialDidFailToLoadWithError:(NSError *)error {
-    
+    [self addLog:@"iron interstitial fail to load"];
 }
 - (void)interstitialDidOpen {
-    
 }
 - (void)interstitialDidClose {
-    
+    [self addLog:@"iron interstitial is dismissed"];
 }
 - (void)interstitialDidShow {
-    
 }
 - (void)interstitialDidFailToShowWithError:(NSError *)error {
-    
 }
 - (void)didClickInterstitial {
-    
+    [self addLog:@"iron interstitial is clicked"];
 }
 
 #pragma mark - Orientation delegate
