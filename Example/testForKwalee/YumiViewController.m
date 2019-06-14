@@ -54,6 +54,7 @@
     self.yumiInterstitial.delegate = self;
     // init yumi video
     [[YumiMediationVideo sharedInstance] loadAdWithPlacementID:@"5xmpgti4" channelID:@"" versionID:@""];
+    [YumiMediationVideo sharedInstance].delegate = self;
     
     // iron
     [IronSource setRewardedVideoDelegate:self];
