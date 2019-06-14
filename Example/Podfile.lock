@@ -1,0 +1,136 @@
+PODS:
+  - IronSourceAdColonyAdapter (4.1.5.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceAdMobAdapter (4.3.4.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceAmazonAdapter (4.3.0.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceAppLovinAdapter (4.3.3.2):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceChartboostAdapter (4.1.6.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceFacebookAdapter (4.3.4.2):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceHyprMXAdapter (4.1.2.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceInMobiAdapter (4.3.1.2):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceMaioAdapter (4.1.3.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceSDK (6.8.4.0)
+  - IronSourceTapjoyAdapter (4.1.3.2):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceTikTokAdapter (4.1.0.1):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceUnityAdsAdapter (4.1.2.4):
+    - IronSourceSDK (= 6.8.4.0)
+  - IronSourceVungleAdapter (4.1.6.2):
+    - IronSourceSDK (= 6.8.4.0)
+  - testForKwalee (0.1.0)
+  - YumiBaidu (4.6.4)
+  - YumiDomob (3.8.0)
+  - YumiGDT (4.10.2)
+  - YumiMediationAdapters/Baidu (3.6.4.0):
+    - YumiBaidu (= 4.6.4)
+    - YumiMediationSDK (~> 3.6.0)
+  - YumiMediationAdapters/Domob (3.6.4.0):
+    - YumiDomob (= 3.8.0)
+    - YumiMediationSDK (~> 3.6.0)
+  - YumiMediationAdapters/GDT (3.6.4.0):
+    - YumiGDT (= 4.10.2)
+    - YumiMediationSDK (~> 3.6.0)
+  - YumiMediationAdapters/Mintegral (3.6.4.0):
+    - YumiMediationSDK (~> 3.6.0)
+    - YumiMintegral (= 5.3.1)
+  - YumiMediationAdapters/OneWay (3.6.4.0):
+    - YumiMediationSDK (~> 3.6.0)
+    - YumiOneWay (= 2.1.0)
+  - YumiMediationAdapters/ZplayAds (3.6.4.0):
+    - YumiMediationSDK (~> 3.6.0)
+  - YumiMediationDebugCenter-iOS (3.6.4):
+    - YumiMediationSDK (~> 3.6.0)
+  - YumiMediationSDK (3.6.4)
+  - YumiMintegral (5.3.1)
+  - YumiOneWay (2.1.0)
+
+DEPENDENCIES:
+  - IronSourceAdColonyAdapter (= 4.1.5.1)
+  - IronSourceAdMobAdapter (= 4.3.4.1)
+  - IronSourceAmazonAdapter (= 4.3.0.1)
+  - IronSourceAppLovinAdapter (= 4.3.3.2)
+  - IronSourceChartboostAdapter (= 4.1.6.1)
+  - IronSourceFacebookAdapter (= 4.3.4.2)
+  - IronSourceHyprMXAdapter (= 4.1.2.1)
+  - IronSourceInMobiAdapter (= 4.3.1.2)
+  - IronSourceMaioAdapter (= 4.1.3.1)
+  - IronSourceSDK (= 6.8.4.0)
+  - IronSourceTapjoyAdapter (= 4.1.3.2)
+  - IronSourceTikTokAdapter (= 4.1.0.1)
+  - IronSourceUnityAdsAdapter (= 4.1.2.4)
+  - IronSourceVungleAdapter (= 4.1.6.2)
+  - testForKwalee (from `../`)
+  - YumiMediationAdapters/Baidu
+  - YumiMediationAdapters/Domob
+  - YumiMediationAdapters/GDT
+  - YumiMediationAdapters/Mintegral
+  - YumiMediationAdapters/OneWay
+  - YumiMediationAdapters/ZplayAds
+  - YumiMediationDebugCenter-iOS
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IronSourceAdColonyAdapter
+    - IronSourceAdMobAdapter
+    - IronSourceAmazonAdapter
+    - IronSourceAppLovinAdapter
+    - IronSourceChartboostAdapter
+    - IronSourceFacebookAdapter
+    - IronSourceHyprMXAdapter
+    - IronSourceInMobiAdapter
+    - IronSourceMaioAdapter
+    - IronSourceSDK
+    - IronSourceTapjoyAdapter
+    - IronSourceTikTokAdapter
+    - IronSourceUnityAdsAdapter
+    - IronSourceVungleAdapter
+    - YumiBaidu
+    - YumiDomob
+    - YumiGDT
+    - YumiMediationAdapters
+    - YumiMediationDebugCenter-iOS
+    - YumiMediationSDK
+    - YumiMintegral
+    - YumiOneWay
+
+EXTERNAL SOURCES:
+  testForKwalee:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IronSourceAdColonyAdapter: f04a4c021d94b2bab2a6da017dc7381ef775cd3c
+  IronSourceAdMobAdapter: 4e746ce61b3ec0d4848b49ddad75e49e26600b55
+  IronSourceAmazonAdapter: 12a598c92b7374e5aedc22e51e18f823160d6fe3
+  IronSourceAppLovinAdapter: 5c16b339fa13a444e48113eb3c8ffb7f1327df74
+  IronSourceChartboostAdapter: 3c58ee9d91632c6659224ccae14c7754e1ff689b
+  IronSourceFacebookAdapter: 06b1dd15c040a301b06dfe825deb2aa760dd94eb
+  IronSourceHyprMXAdapter: b3a39a969acd9de8bc2e8cdc21ad96a6157ecf23
+  IronSourceInMobiAdapter: e2032119d442684ee1956d13c3b5e58f9b1cae48
+  IronSourceMaioAdapter: 167f28296c023bfed28efd94eb2ec801f4984f53
+  IronSourceSDK: a4a5f6f0ecbe08f9a6309201f006a0b35804490c
+  IronSourceTapjoyAdapter: d4a83d4064863026b08309c65ca89f923b6a3421
+  IronSourceTikTokAdapter: c55cd29610b4729b40a0ee920133e9f52ebbc375
+  IronSourceUnityAdsAdapter: 775a633095b07e12746ff16dfc9a865f62de3379
+  IronSourceVungleAdapter: 3b92cac10e106153fcb2abe5646be40b7842be36
+  testForKwalee: 9bf2fb0ec3aa6e615d6b7903e08f04bb12346d56
+  YumiBaidu: eab5aa9c216188a0f65433dc539f2e1036d3044a
+  YumiDomob: 0b66e4e87b80196c19543f2b8f995a5e77de1d34
+  YumiGDT: 55f3a59a85c8dba3510ed645e92f4152e145ad50
+  YumiMediationAdapters: 1c83b2b3c0c873c58a97579b63fd22be6f22da00
+  YumiMediationDebugCenter-iOS: 5cbab72b55f610b7734d0f4eb52e06e5c0ca0cd6
+  YumiMediationSDK: e2b9b6d30ea624f86fbf570d775a549f7b050a59
+  YumiMintegral: 587c630779c1071164e235aaaef976aefd232885
+  YumiOneWay: 719211826201ed8d93b89d5051e8cb25913e3c5a
+
+PODFILE CHECKSUM: 2e38e8a02b9d42dcb6062f86a7407236b7c22163
+
+COCOAPODS: 1.7.1
